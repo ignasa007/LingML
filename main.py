@@ -142,7 +142,7 @@ for epoch in range(cfg.DATA.N_EPOCHS):
             logger.log(f'Validation (total {len(test_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
             logger.log(f'Finished batch {batch}.\n', print_text=True)
 
-        if cfg.DATA.SAVE_EVERY is not None and batch % cfg.DATA.SAVE_EVERY == 0 or batch == TOTAL_BATCHES:
+        if cfg.DATA.SAVE_EVERY is not None and (batch % cfg.DATA.SAVE_EVERY == 0 or batch == TOTAL_BATCHES):
             ckpt_fn = f'{logger.SAVE_DIR}/ckpt{adjust(batch, TOTAL_BATCHES)}.pth'
             logger.log(f'Saving model at {ckpt_fn}...', print_text=True)
             torch.save(model.base_model.state_dict(), ckpt_fn)

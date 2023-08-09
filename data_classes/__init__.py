@@ -2,7 +2,7 @@ from .constraint_covid import ConstraintCovid
 from .covid_mis_20 import CovidMis20
 from .constraint_covid_filtered import ConstraintFiltered
 from .constraint_covid_appended import ConstraintAppended
-from .constrain_covid_filtered_appended import ConstraintFilteredAppended
+from .constraint_covid_filtered_appended import ConstraintFilteredAppended
 
 
 def dataclass_map(key):

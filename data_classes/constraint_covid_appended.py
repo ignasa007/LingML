@@ -15,7 +15,7 @@ class ConstraintAppended(BaseDataset):
         for split in ('train', 'val', 'test'):
             fn = f'{root}/{split}.csv'
             try:
-                df = pd.read_csv(fn, index_col=0).drop(['Segment'], axis=1)
+                df = pd.read_csv(fn, index_col=0).drop(['Segment',], axis=1)
                 df.label = df.label.replace({'real': 1, 'fake': 0})
                 self.datasets[split] = df
             except:

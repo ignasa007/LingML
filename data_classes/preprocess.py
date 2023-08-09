@@ -9,6 +9,12 @@ URL_REGEX = r'https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{
 HASHTAG_REGEX = r'#[^\s]+'
 MENTION_REGEX = r'@[^\s]+'
 
+URL_TOKEN = '[URL]'
+HASHTAG_TOKEN = '[HASHTAG]'
+MENTION_TOKEN = '[MENTION]'
+EMOJI_TOKEN = '[EMOJI]'
+COVID_TOKEN = '[COVID]'
+
 COVID_WORDS = [
     'covid 19', 'covid-19', 'covid19', 'covid',
     'corona virus', 'coronavirus', 'corona',
@@ -19,9 +25,9 @@ class PreProcessor:
 
     def __init__(
         self, 
-        url_token: Union[str, None] = '[URL]', hashtag_token: Union[str, None] = '[HASHTAG]',
-        mention_token: Union[str, None] = '[MENTION]', emoji_token: Union[str, None] = '[EMOJI]',
-        covid_token: Union[str, None] = '[COVID]', covid_words: Union[str, Iterable, None] = COVID_WORDS
+        url_token: Union[str, None] = URL_TOKEN, hashtag_token: Union[str, None] = HASHTAG_TOKEN,
+        mention_token: Union[str, None] = MENTION_TOKEN, emoji_token: Union[str, None] = EMOJI_TOKEN,
+        covid_token: Union[str, None] = COVID_TOKEN, covid_words: Union[str, Iterable, None] = COVID_WORDS
     ):
 
         self.URL_TOKEN = url_token

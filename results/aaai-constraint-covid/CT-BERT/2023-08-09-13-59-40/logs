@@ -47,3 +47,18 @@ SAVE EVERY = None
 2023-08-09-14-13-48: Validation (total 179 batches): accuracy = 0.978037, f1-score = 0.979176, loss = 18.906460
 2023-08-09-14-13-48: Finished batch 3600.
 
+2023-08-09-14-15-57: Training (last 600 batches): accuracy = 0.998194, f1-score = 0.998270, loss = 3.236604
+2023-08-09-14-16-08: Validation (total 179 batches): accuracy = 0.978972, f1-score = 0.979991, loss = 16.785391
+2023-08-09-14-16-08: Finished batch 4200.
+
+2023-08-09-14-18-17: Training (last 600 batches): accuracy = 0.997083, f1-score = 0.997216, loss = 6.324598
+2023-08-09-14-18-29: Validation (total 179 batches): accuracy = 0.975234, f1-score = 0.976580, loss = 20.149632
+2023-08-09-14-18-29: Finished batch 4800.
+
+2023-08-09-14-20-27: Training (last 600 batches): accuracy = 0.997361, f1-score = 0.997472, loss = 7.538594
+2023-08-09-14-20-38: Validation (total 179 batches): accuracy = 0.973832, f1-score = 0.975067, loss = 23.370531
+2023-08-09-14-20-38: Finished batch 5350.
+
+2023-08-09-14-20-38: Saving model at ./results/aaai-constraint-covid/CT-BERT/2023-08-09-13-59-40/ckpt5350.pth...
+2023-08-09-14-20-39: Finished saving model at ./results/aaai-constraint-covid/CT-BERT/2023-08-09-13-59-40/ckpt5350.pth.
+

@@ -51,7 +51,7 @@ class BaseModel:
     ):
 
         if self.add_dense:
-            print(f'Already extended dense layer by {self.size} units.')
+            print(f'Already extended dense layer by {self.dense_size} units.')
             return
         
         dense = self.get_dense()
@@ -63,7 +63,7 @@ class BaseModel:
 
         self.set_dense(new_dense)
         self.add_dense = True
-        self.size = size
+        self.dense_size = size
 
     def __call__(
         self,
