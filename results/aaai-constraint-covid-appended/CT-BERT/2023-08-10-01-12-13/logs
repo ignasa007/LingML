@@ -31,3 +31,31 @@ SAVE EVERY = None
 2023-08-10-01-18-04: Validation (total 179 batches): accuracy = 0.972897, f1-score = 0.974494, loss = 17.328114
 2023-08-10-01-18-04: Finished batch 1200.
 
+2023-08-10-01-21-50: Training (last 600 batches): accuracy = 0.993472, f1-score = 0.993772, loss = 12.590603
+2023-08-10-01-22-12: Validation (total 179 batches): accuracy = 0.975701, f1-score = 0.976723, loss = 16.198854
+2023-08-10-01-22-12: Finished batch 1800.
+
+2023-08-10-01-26-10: Training (last 600 batches): accuracy = 0.994444, f1-score = 0.994662, loss = 11.091408
+2023-08-10-01-26-33: Validation (total 179 batches): accuracy = 0.976636, f1-score = 0.977837, loss = 17.555492
+2023-08-10-01-26-33: Finished batch 2400.
+
+2023-08-10-01-30-36: Training (last 600 batches): accuracy = 0.997639, f1-score = 0.997737, loss = 4.230818
+2023-08-10-01-31-00: Validation (total 179 batches): accuracy = 0.977103, f1-score = 0.978347, loss = 21.537159
+2023-08-10-01-31-00: Finished batch 3000.
+
+2023-08-10-01-34-51: Training (last 600 batches): accuracy = 0.995694, f1-score = 0.995875, loss = 8.930622
+2023-08-10-01-35-14: Validation (total 179 batches): accuracy = 0.979907, f1-score = 0.980931, loss = 14.291519
+2023-08-10-01-35-14: Finished batch 3600.
+
+2023-08-10-01-38-52: Training (last 600 batches): accuracy = 0.998472, f1-score = 0.998560, loss = 3.234021
+2023-08-10-01-39-11: Validation (total 179 batches): accuracy = 0.979907, f1-score = 0.980880, loss = 16.834616
+2023-08-10-01-39-11: Finished batch 4200.
+
+2023-08-10-01-42-42: Training (last 600 batches): accuracy = 0.999444, f1-score = 0.999465, loss = 1.140557
+2023-08-10-01-43-02: Validation (total 179 batches): accuracy = 0.979439, f1-score = 0.980496, loss = 14.067503
+2023-08-10-01-43-02: Finished batch 4800.
+
+2023-08-10-01-46-13: Training (last 600 batches): accuracy = 0.999028, f1-score = 0.999075, loss = 2.691689
+2023-08-10-01-46-31: Validation (total 179 batches): accuracy = 0.967757, f1-score = 0.969856, loss = 21.889059
+2023-08-10-01-46-31: Finished batch 5350.
+
