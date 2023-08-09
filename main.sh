@@ -1,4 +1,4 @@
-for model in {twitter-roberta-base-sentiment-latest,}; do
+for model in {covid-twitter-bert-v2,}; do
     for ADD_NEW_TOKENS in {False,True,}; do
         for i in {1..5}; do
             python3 -B main.py \
@@ -6,7 +6,7 @@ for model in {twitter-roberta-base-sentiment-latest,}; do
                 --dataset aaai-constraint-covid-filtered-appended \
                 ADD_NEW_TOKENS ${ADD_NEW_TOKENS} \
                 DATA.SAVE_EVERY None \
-                DEVICE_INDEX 1;
+                DEVICE_INDEX 0;
         done
     done
 done
