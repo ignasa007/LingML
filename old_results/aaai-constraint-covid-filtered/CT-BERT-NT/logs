@@ -1,0 +1,87 @@
+DATASET = aaai-constraint-covid-filtered
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = True
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = covid-twitter-bert-v2
+LEARNING RATE = 1e-05
+TEST EVERY = 300
+SAVE EVERY = 600
+
+2023-07-12-02-18-42: Loading and pre-processing datasets...
+2023-07-12-02-18-43: Finished pre-processing datasets.
+
+2023-07-12-02-18-43: Tokenizing datasets...
+2023-07-12-02-18-45: Finished tokenizing datasets.
+
+2023-07-12-02-18-45: Preparing data-loaders...
+2023-07-12-02-18-45: Finished preparing data-loaders.
+
+2023-07-12-02-18-45: Loading and preparing model...
+2023-07-12-02-18-48: Finshed preparing model.
+
+2023-07-12-02-18-48: Starting training...
+
+2023-07-12-02-19-59: Training (last 300 batches): accuracy = 0.830278, f1-score = 0.877285, loss = 109.310618
+2023-07-12-02-20-05: Validation (total 81 batches): accuracy = 0.961777, f1-score = 0.970935, loss = 10.952345
+2023-07-12-02-20-05: Finished batch 300.
+
+2023-07-12-02-21-17: Training (last 300 batches): accuracy = 0.956304, f1-score = 0.965728, loss = 42.518448
+2023-07-12-02-21-23: Validation (total 81 batches): accuracy = 0.972107, f1-score = 0.978890, loss = 8.031396
+2023-07-12-02-21-23: Finished batch 600.
+
+2023-07-12-02-21-23: Saving model at ./results/2023-07-12-02-18-42/ckpt0600.pth...
+2023-07-12-02-21-24: Finished saving model at ./results/2023-07-12-02-18-42/ckpt0600.pth.
+
+2023-07-12-02-22-35: Training (last 300 batches): accuracy = 0.939326, f1-score = 0.952732, loss = 49.040574
+2023-07-12-02-22-41: Validation (total 81 batches): accuracy = 0.961777, f1-score = 0.971429, loss = 8.461942
+2023-07-12-02-22-41: Finished batch 900.
+
+2023-07-12-02-23-51: Training (last 300 batches): accuracy = 0.975508, f1-score = 0.980719, loss = 25.039552
+2023-07-12-02-23-57: Validation (total 81 batches): accuracy = 0.966942, f1-score = 0.975078, loss = 7.952371
+2023-07-12-02-23-57: Finished batch 1200.
+
+2023-07-12-02-23-57: Saving model at ./results/2023-07-12-02-18-42/ckpt1200.pth...
+2023-07-12-02-23-58: Finished saving model at ./results/2023-07-12-02-18-42/ckpt1200.pth.
+
+2023-07-12-02-25-08: Training (last 300 batches): accuracy = 0.984414, f1-score = 0.987863, loss = 16.652650
+2023-07-12-02-25-14: Validation (total 81 batches): accuracy = 0.965909, f1-score = 0.973954, loss = 9.351529
+2023-07-12-02-25-14: Finished batch 1500.
+
+2023-07-12-02-26-25: Training (last 300 batches): accuracy = 0.985806, f1-score = 0.988867, loss = 13.914751
+2023-07-12-02-26-31: Validation (total 81 batches): accuracy = 0.970041, f1-score = 0.977467, loss = 7.274703
+2023-07-12-02-26-31: Finished batch 1800.
+
+2023-07-12-02-26-31: Saving model at ./results/2023-07-12-02-18-42/ckpt1800.pth...
+2023-07-12-02-26-32: Finished saving model at ./results/2023-07-12-02-18-42/ckpt1800.pth.
+
+2023-07-12-02-27-42: Training (last 300 batches): accuracy = 0.991650, f1-score = 0.993441, loss = 9.079068
+2023-07-12-02-27-48: Validation (total 81 batches): accuracy = 0.966942, f1-score = 0.975347, loss = 8.724434
+2023-07-12-02-27-48: Finished batch 2100.
+
+2023-07-12-02-28-58: Training (last 300 batches): accuracy = 0.993599, f1-score = 0.994981, loss = 5.907997
+2023-07-12-02-29-04: Validation (total 81 batches): accuracy = 0.965909, f1-score = 0.974635, loss = 10.655616
+2023-07-12-02-29-04: Finished batch 2400.
+
+2023-07-12-02-29-04: Saving model at ./results/2023-07-12-02-18-42/ckpt2400.pth...
+2023-07-12-02-29-05: Finished saving model at ./results/2023-07-12-02-18-42/ckpt2400.pth.
+
+2023-07-12-02-30-16: Training (last 300 batches): accuracy = 0.995269, f1-score = 0.996313, loss = 5.095942
+2023-07-12-02-30-22: Validation (total 81 batches): accuracy = 0.964876, f1-score = 0.973602, loss = 8.540920
+2023-07-12-02-30-22: Finished batch 2700.
+
+2023-07-12-02-31-32: Training (last 300 batches): accuracy = 0.995269, f1-score = 0.996302, loss = 4.338507
+2023-07-12-02-31-38: Validation (total 81 batches): accuracy = 0.966942, f1-score = 0.975232, loss = 9.551020
+2023-07-12-02-31-38: Finished batch 3000.
+
+2023-07-12-02-31-38: Saving model at ./results/2023-07-12-02-18-42/ckpt3000.pth...
+2023-07-12-02-31-39: Finished saving model at ./results/2023-07-12-02-18-42/ckpt3000.pth.
+
+2023-07-12-02-32-33: Training (last 300 batches): accuracy = 0.993877, f1-score = 0.995230, loss = 5.716532
+2023-07-12-02-32-39: Validation (total 81 batches): accuracy = 0.966942, f1-score = 0.975422, loss = 9.414501
+2023-07-12-02-32-39: Finished batch 3230.
+
+2023-07-12-02-32-39: Saving model at ./results/2023-07-12-02-18-42/ckpt3230.pth...
+2023-07-12-02-32-40: Finished saving model at ./results/2023-07-12-02-18-42/ckpt3230.pth.
+

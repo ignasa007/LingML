@@ -1,0 +1,4 @@
+DEVICE_INDEX: 1
+SPLITS: ['train', 'val']
+ADD_NEW_TOKENS: false
+LR: 0.00001

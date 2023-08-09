@@ -1,0 +1,88 @@
+DATASET = aaai-constraint-covid-appended
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = True
+MAX LENGTH = 286
+BATCH SIZE = 12
+MODEL = twitter-roberta-base-sentiment
+LEARNING RATE = 1e-05
+TEST EVERY = 600
+SAVE EVERY = 600
+
+2023-08-04-17-31-50: Loading and pre-processing datasets...
+2023-08-04-17-31-51: Finished pre-processing datasets.
+
+2023-08-04-17-31-51: Tokenizing datasets...
+2023-08-04-17-31-54: Finished tokenizing datasets.
+
+2023-08-04-17-31-54: Preparing data-loaders...
+2023-08-04-17-31-54: Finished preparing data-loaders.
+
+2023-08-04-17-31-54: Loading and preparing model...
+2023-08-04-17-31-56: Finshed preparing model.
+
+2023-08-04-17-31-56: Starting training...
+
+2023-08-04-17-33-26: Training (last 600 batches): accuracy = 0.918611, f1-score = 0.922834, loss = 125.624403
+2023-08-04-17-33-34: Validation (total 179 batches): accuracy = 0.950000, f1-score = 0.953132, loss = 25.309389
+2023-08-04-17-33-34: Finished batch 600.
+
+2023-08-04-17-33-34: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt0600.pth...
+2023-08-04-17-33-34: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt0600.pth.
+
+2023-08-04-17-35-08: Training (last 600 batches): accuracy = 0.972639, f1-score = 0.974123, loss = 48.494651
+2023-08-04-17-35-17: Validation (total 179 batches): accuracy = 0.957944, f1-score = 0.960422, loss = 28.543726
+2023-08-04-17-35-17: Finished batch 1200.
+
+2023-08-04-17-35-17: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt1200.pth...
+2023-08-04-17-35-18: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt1200.pth.
+
+2023-08-04-17-36-55: Training (last 600 batches): accuracy = 0.984167, f1-score = 0.984776, loss = 28.826676
+2023-08-04-17-37-04: Validation (total 179 batches): accuracy = 0.963551, f1-score = 0.965639, loss = 27.302610
+2023-08-04-17-37-04: Finished batch 1800.
+
+2023-08-04-17-37-04: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt1800.pth...
+2023-08-04-17-37-04: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt1800.pth.
+
+2023-08-04-17-38-42: Training (last 600 batches): accuracy = 0.990417, f1-score = 0.990850, loss = 17.138586
+2023-08-04-17-38-51: Validation (total 179 batches): accuracy = 0.964019, f1-score = 0.965640, loss = 27.576485
+2023-08-04-17-38-51: Finished batch 2400.
+
+2023-08-04-17-38-51: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt2400.pth...
+2023-08-04-17-38-51: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt2400.pth.
+
+2023-08-04-17-40-29: Training (last 600 batches): accuracy = 0.993333, f1-score = 0.993571, loss = 11.730400
+2023-08-04-17-40-38: Validation (total 179 batches): accuracy = 0.964486, f1-score = 0.966490, loss = 27.665760
+2023-08-04-17-40-38: Finished batch 3000.
+
+2023-08-04-17-40-38: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt3000.pth...
+2023-08-04-17-40-38: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt3000.pth.
+
+2023-08-04-17-42-16: Training (last 600 batches): accuracy = 0.996111, f1-score = 0.996313, loss = 7.559424
+2023-08-04-17-42-25: Validation (total 179 batches): accuracy = 0.966355, f1-score = 0.967828, loss = 24.985046
+2023-08-04-17-42-25: Finished batch 3600.
+
+2023-08-04-17-42-25: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt3600.pth...
+2023-08-04-17-42-25: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt3600.pth.
+
+2023-08-04-17-44-02: Training (last 600 batches): accuracy = 0.997222, f1-score = 0.997379, loss = 5.776294
+2023-08-04-17-44-11: Validation (total 179 batches): accuracy = 0.968692, f1-score = 0.970209, loss = 31.732435
+2023-08-04-17-44-11: Finished batch 4200.
+
+2023-08-04-17-44-11: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt4200.pth...
+2023-08-04-17-44-11: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt4200.pth.
+
+2023-08-04-17-45-48: Training (last 600 batches): accuracy = 0.998333, f1-score = 0.998395, loss = 4.273144
+2023-08-04-17-45-57: Validation (total 179 batches): accuracy = 0.964019, f1-score = 0.965424, loss = 36.024525
+2023-08-04-17-45-57: Finished batch 4800.
+
+2023-08-04-17-45-57: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt4800.pth...
+2023-08-04-17-45-58: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt4800.pth.
+
+2023-08-04-17-47-27: Training (last 600 batches): accuracy = 0.998056, f1-score = 0.998129, loss = 4.180147
+2023-08-04-17-47-36: Validation (total 179 batches): accuracy = 0.968224, f1-score = 0.969670, loss = 27.264824
+2023-08-04-17-47-36: Finished batch 5350.
+
+2023-08-04-17-47-36: Saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt5350.pth...
+2023-08-04-17-47-36: Finished saving model at ./results/aaai-constraint-covid-appended/Twitter-RoBERTa-NT/ckpt5350.pth.
+

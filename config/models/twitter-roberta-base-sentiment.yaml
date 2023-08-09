@@ -1,0 +1,2 @@
+HF_PATH: 'cardiffnlp/twitter-roberta-base-sentiment'
+MAX_LENGTH: 286
