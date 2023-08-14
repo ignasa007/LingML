@@ -12,11 +12,25 @@ class BaseDataset:
         pass
 
     def __getitem__(
-        self, 
+        self,
         key
     ):
 
         return self.datasets.get(key, None)
+    
+    def __setitem__(
+        self, 
+        key, 
+        value
+    ):
+        
+        self.datasets[key] = value
+    
+    def __iter__(
+        self
+    ):
+
+        return iter(self.datasets)
 
     def apply(
         self, 
