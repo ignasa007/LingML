@@ -1,4 +1,4 @@
-# VCN-Fake-News
+# Project-FIDES
 
 This is the code repository for the technical part of Project FIDES. As of 14 August, 2023, the repository contains the code for Studies 3 and 4.
 
