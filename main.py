@@ -44,7 +44,7 @@ cfg = Config(
 
 Dataset = dataclass_map(args.dataset)
 Model = modelclass_map(args.model)
-DEVICE = torch.device(f'cuda:{cfg.DEVICE_INDEX}' if torch.cuda.is_available() else 'cpu')
+DEVICE = torch.device(f'cuda:{cfg.DEVICE_INDEX}' if torch.cuda.is_available() and cfg.DEVICE_INDEX is not None else 'cpu')
 
 
 logger = Logger(

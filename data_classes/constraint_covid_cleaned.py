@@ -18,7 +18,7 @@ def add_tokens(row):
     return tweet
 
 
-class Constraintcleaned(BaseDataset):
+class ConstraintCleaned(BaseDataset):
 
     def __init__(
         self, 
