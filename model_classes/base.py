@@ -73,7 +73,19 @@ class BaseModel:
         labels: Tensor
     ):
 
-        raise NotImplementedError
+        outputs = self.transformer(input_ids=input_ids, attention_mask=attention_mask)
+        output = outputs[0]    # sequence output (before pooling)
+
+        if self.add_dense:
+            output = cat((output[:, [0], :], dense_features.unsqueeze(1)), dim=-1)
+            # classifier pools the output as [:, 0, :] (not sure why), so making it a 3D tensor, maintaining [:, 0, :]
+        
+        logits = self.classifier(output)
+
+        loss = CrossEntropyLoss()(logits.view(-1, self.base_model.num_labels), labels.view(-1))
+        outputs = (loss, logits,) + outputs[2:]
+
+        return outputs
 
     def get_dense(
         self

@@ -1,6 +1,6 @@
 # VCN-Fake-News
 
-This is the code repository for the technical part of Project FIDES. As of 14 August, 2023, the repository contains the code for Studies 3 and 4.
+This is the code repository for the technical part of Project FIDES. As of 17 August, 2023, the repository contains the code for Studies 3 and 4.
 
 ## Directory Structure
 
@@ -15,7 +15,7 @@ Note: these plots were made before we decided to average out results over multip
     - both models need special implementation for accommodating language features.
 - <b>results</b> - results of the different runs. <br>
 \<dataset> -> \<model> -> \<run-date> -> logs/training_results/validation_results <br>
-Note: CovidMis20 experiment has only 1 run since it was condicted before the decision to conduct multiple runs for each experiment was made. 
+Note: CovidMis20 experiment has only 1 run which was conducted before the decision to conduct multiple runs for each experiment was made. 
 - <b>utils</b> - utility functions for running the transformer experiments.
 - <b>analysis.ipynb</b> - notebook to consoliate results.
 - <b>main.py</b> - main file for running the transformer experiments.

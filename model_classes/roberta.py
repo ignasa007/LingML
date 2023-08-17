@@ -19,28 +19,22 @@ class RoBERTa(BaseModel):
 
         super().__init__(base_model, emb_table_size, two_labels, dense_size, device)
 
-    def __call__(
+    def transformer(
         self,
-        input_ids: Tensor,
-        attention_mask: Tensor,
-        dense_features: Union[Tensor, None],
-        labels: Tensor
+        input_ids: Tensor = None,
+        attention_mask: Tensor = None
     ):
 
-        outputs = self.base_model.roberta(input_ids=input_ids, attention_mask=attention_mask)
-        output = outputs[0]    # sequence output (before pooling)
+        return self.base_model.roberta(input_ids=input_ids, attention_mask=attention_mask)
 
-        if self.add_dense:
-            output = cat((output[:, [0], :], dense_features.unsqueeze(1)), dim=-1)
-            # classifier pools the output as [:, 0, :] (not sure why), so making it a 3D tensor, maintaining [:, 0, :]
-            # https://github.com/huggingface/transformers/blob/e42587f596181396e1c4b63660abf0c736b10dae/src/transformers/models/roberta/modeling_roberta.py#L1424 
+    def classifier(
+        self,
+        output: Tensor
+    ):
         
         logits = self.base_model.classifier(output)
 
-        loss = CrossEntropyLoss()(logits.view(-1, self.base_model.num_labels), labels.view(-1))
-        outputs = (loss, logits,) + outputs[2:]
-
-        return outputs
+        return logits
 
     def get_dense(
         self
