@@ -1,0 +1,88 @@
+DATASET = aaai-constraint-covid
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = True
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = albert-base-v2
+LEARNING RATE = 1e-05
+TEST EVERY = 600
+SAVE EVERY = 600
+
+2023-08-19-02-32-06: Loading and pre-processing datasets...
+2023-08-19-02-32-07: Finished pre-processing datasets.
+
+2023-08-19-02-32-07: Tokenizing datasets...
+2023-08-19-02-32-10: Finished tokenizing datasets.
+
+2023-08-19-02-32-10: Preparing data-loaders...
+2023-08-19-02-32-10: Finished preparing data-loaders.
+
+2023-08-19-02-32-10: Loading and preparing model...
+2023-08-19-02-32-11: Finshed preparing model.
+
+2023-08-19-02-32-11: Starting training...
+
+2023-08-19-02-32-53: Training (last 600 batches): accuracy = 0.911806, f1-score = 0.916127, loss = 130.242253
+2023-08-19-02-32-57: Validation (total 179 batches): accuracy = 0.949065, f1-score = 0.951577, loss = 26.035240
+2023-08-19-02-32-57: Finished batch 600.
+
+2023-08-19-02-32-57: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt0600.pth...
+2023-08-19-02-32-57: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt0600.pth.
+
+2023-08-19-02-33-39: Training (last 600 batches): accuracy = 0.972639, f1-score = 0.973931, loss = 50.303296
+2023-08-19-02-33-43: Validation (total 179 batches): accuracy = 0.950935, f1-score = 0.951989, loss = 23.880745
+2023-08-19-02-33-43: Finished batch 1200.
+
+2023-08-19-02-33-43: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt1200.pth...
+2023-08-19-02-33-43: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt1200.pth.
+
+2023-08-19-02-34-25: Training (last 600 batches): accuracy = 0.980972, f1-score = 0.981818, loss = 35.059293
+2023-08-19-02-34-29: Validation (total 179 batches): accuracy = 0.947196, f1-score = 0.948094, loss = 26.060135
+2023-08-19-02-34-29: Finished batch 1800.
+
+2023-08-19-02-34-29: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt1800.pth...
+2023-08-19-02-34-29: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt1800.pth.
+
+2023-08-19-02-35-10: Training (last 600 batches): accuracy = 0.985417, f1-score = 0.986061, loss = 25.245618
+2023-08-19-02-35-15: Validation (total 179 batches): accuracy = 0.966355, f1-score = 0.968142, loss = 23.992765
+2023-08-19-02-35-15: Finished batch 2400.
+
+2023-08-19-02-35-15: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt2400.pth...
+2023-08-19-02-35-15: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt2400.pth.
+
+2023-08-19-02-35-56: Training (last 600 batches): accuracy = 0.987083, f1-score = 0.987635, loss = 24.609484
+2023-08-19-02-36-01: Validation (total 179 batches): accuracy = 0.964486, f1-score = 0.965889, loss = 19.527817
+2023-08-19-02-36-01: Finished batch 3000.
+
+2023-08-19-02-36-01: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt3000.pth...
+2023-08-19-02-36-01: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt3000.pth.
+
+2023-08-19-02-36-42: Training (last 600 batches): accuracy = 0.993750, f1-score = 0.994036, loss = 11.204594
+2023-08-19-02-36-47: Validation (total 179 batches): accuracy = 0.957944, f1-score = 0.958753, loss = 30.795683
+2023-08-19-02-36-47: Finished batch 3600.
+
+2023-08-19-02-36-47: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt3600.pth...
+2023-08-19-02-36-47: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt3600.pth.
+
+2023-08-19-02-37-28: Training (last 600 batches): accuracy = 0.996389, f1-score = 0.996552, loss = 9.063852
+2023-08-19-02-37-32: Validation (total 179 batches): accuracy = 0.971495, f1-score = 0.972949, loss = 19.321075
+2023-08-19-02-37-32: Finished batch 4200.
+
+2023-08-19-02-37-32: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt4200.pth...
+2023-08-19-02-37-33: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt4200.pth.
+
+2023-08-19-02-38-14: Training (last 600 batches): accuracy = 0.984444, f1-score = 0.985114, loss = 27.740029
+2023-08-19-02-38-18: Validation (total 179 batches): accuracy = 0.962617, f1-score = 0.964061, loss = 19.275326
+2023-08-19-02-38-18: Finished batch 4800.
+
+2023-08-19-02-38-18: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt4800.pth...
+2023-08-19-02-38-18: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt4800.pth.
+
+2023-08-19-02-38-56: Training (last 600 batches): accuracy = 0.991111, f1-score = 0.991546, loss = 16.503845
+2023-08-19-02-39-01: Validation (total 179 batches): accuracy = 0.968224, f1-score = 0.969965, loss = 23.194614
+2023-08-19-02-39-01: Finished batch 5350.
+
+2023-08-19-02-39-01: Saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt5350.pth...
+2023-08-19-02-39-01: Finished saving model at ./results/aaai-constraint-covid/ALBERT-NT/2023-08-19-02-32-06/ckpt5350.pth.
+

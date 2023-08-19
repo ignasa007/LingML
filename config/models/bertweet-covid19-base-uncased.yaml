@@ -1,0 +1,2 @@
+HF_PATH: 'vinai/bertweet-covid19-base-uncased'
+MAX_LENGTH: 128

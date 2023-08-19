@@ -112,7 +112,6 @@ base_model = AutoModelForSequenceClassification.from_pretrained(cfg.MODEL.HF_PAT
 model = Model(
     base_model,
     emb_table_size=len(tokenizer),
-    two_labels=True,
     dense_size=dense_features[cfg.SPLITS[0]].size(1) if dense_features[cfg.SPLITS[0]] is not None else None,
     device=DEVICE
 )

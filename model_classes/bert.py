@@ -1,7 +1,7 @@
 from typing import Union
 
-from torch import cat, device, Tensor
-from torch.nn import Linear, CrossEntropyLoss
+from torch import device, Tensor
+from torch.nn import Linear
 
 from .base import BaseModel
 
@@ -12,20 +12,24 @@ class BERT(BaseModel):
         self,
         base_model,
         emb_table_size: Union[int, None],
-        two_labels: bool = False,
         dense_size: Union[int, None] = None,
         device: device = device(type='cpu')
     ):
 
-        super().__init__(base_model, emb_table_size, two_labels, dense_size, device)
+        base_model.pooler = base_model.bert.pooler
+        base_model.bert.pooler = None
+
+        super().__init__(base_model, emb_table_size, dense_size, device)
 
     def transformer(
         self,
         input_ids: Tensor = None,
         attention_mask: Tensor = None
     ):
+        
+        outputs = self.base_model.bert(input_ids=input_ids, attention_mask=attention_mask)
 
-        return self.base_model.bert(input_ids=input_ids, attention_mask=attention_mask)
+        return outputs
 
     def classifier(
         self,
@@ -37,31 +41,19 @@ class BERT(BaseModel):
         logits = self.base_model.classifier(output)
 
         return logits
-    
-    def extend_dense_layer(
-        self, 
-        size: int
-    ):
-        
-        super().extend_dense_layer(size)
-
-        self.base_model.pooler = self.base_model.bert.pooler
-        self.base_model.bert.pooler = None    
-        # pooling called within bert, and dense features are not added by then
-        # https://github.com/huggingface/transformers/blob/e42587f596181396e1c4b63660abf0c736b10dae/src/transformers/models/bert/modeling_bert.py#L1035C17-L1035C17
 
     def get_dense(
         self
     ):
 
-        return self.base_model.bert.pooler.dense
+        return self.base_model.pooler.dense
     
     def set_dense(
         self,
         dense: Linear
     ):
 
-        self.base_model.bert.pooler.dense = dense
+        self.base_model.pooler.dense = dense
 
     def get_output(
         self

@@ -9,7 +9,7 @@ focus - adding linguistic features
 introduction - 1.5 columns
 lit review - select top cited papers only, those that support story
 novelty - modeling with linguistic features
-data, and preprocessing
+explain data and preprocessing
 10 runs, also include training time
 figure to show model architecture
 test - freeze the transformer layers, then train the dense layers

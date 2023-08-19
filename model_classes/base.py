@@ -10,18 +10,17 @@ class BaseModel:
         self,
         base_model,
         emb_table_size: Union[int, None],
-        two_labels: bool = False,
         dense_size: Union[int, None] = None,
         device: device = device(type='cpu')
     ):
 
         self.base_model = base_model
+        
+        if base_model.num_labels > 2:
+            self.set_two_labels()
 
         if isinstance(emb_table_size, int):
             self.base_model.resize_token_embeddings(emb_table_size)
-
-        if two_labels:
-            self.set_two_labels()
 
         self.add_dense = False
         if isinstance(dense_size, int):
@@ -74,13 +73,13 @@ class BaseModel:
     ):
 
         outputs = self.transformer(input_ids=input_ids, attention_mask=attention_mask)
-        output = outputs[0]    # sequence output (before pooling)
+        sequence_output = outputs[0]    # sequence output (before pooling)
 
         if self.add_dense:
-            output = cat((output[:, [0], :], dense_features.unsqueeze(1)), dim=-1)
+            sequence_output = cat((sequence_output[:, [0], :], dense_features.unsqueeze(1)), dim=-1)
             # classifier pools the output as [:, 0, :] (not sure why), so making it a 3D tensor, maintaining [:, 0, :]
         
-        logits = self.classifier(output)
+        logits = self.classifier(sequence_output)
 
         loss = CrossEntropyLoss()(logits.view(-1, self.base_model.num_labels), labels.view(-1))
         outputs = (loss, logits,) + outputs[2:]

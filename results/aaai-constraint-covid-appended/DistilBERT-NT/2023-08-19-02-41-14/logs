@@ -1,0 +1,88 @@
+DATASET = aaai-constraint-covid-appended
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = True
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = distilbert-base-uncased
+LEARNING RATE = 1e-05
+TEST EVERY = 600
+SAVE EVERY = 600
+
+2023-08-19-02-41-14: Loading and pre-processing datasets...
+2023-08-19-02-41-16: Finished pre-processing datasets.
+
+2023-08-19-02-41-16: Tokenizing datasets...
+2023-08-19-02-41-18: Finished tokenizing datasets.
+
+2023-08-19-02-41-18: Preparing data-loaders...
+2023-08-19-02-41-18: Finished preparing data-loaders.
+
+2023-08-19-02-41-18: Loading and preparing model...
+2023-08-19-02-41-19: Finshed preparing model.
+
+2023-08-19-02-41-19: Starting training...
+
+2023-08-19-02-41-45: Training (last 600 batches): accuracy = 0.901250, f1-score = 0.906901, loss = 138.567425
+2023-08-19-02-41-47: Validation (total 179 batches): accuracy = 0.954673, f1-score = 0.956677, loss = 22.569319
+2023-08-19-02-41-47: Finished batch 600.
+
+2023-08-19-02-41-47: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt0600.pth...
+2023-08-19-02-41-47: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt0600.pth.
+
+2023-08-19-02-42-11: Training (last 600 batches): accuracy = 0.974861, f1-score = 0.976219, loss = 44.940892
+2023-08-19-02-42-13: Validation (total 179 batches): accuracy = 0.962150, f1-score = 0.964427, loss = 23.396288
+2023-08-19-02-42-13: Finished batch 1200.
+
+2023-08-19-02-42-13: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt1200.pth...
+2023-08-19-02-42-14: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt1200.pth.
+
+2023-08-19-02-42-38: Training (last 600 batches): accuracy = 0.988472, f1-score = 0.989037, loss = 22.726864
+2023-08-19-02-42-40: Validation (total 179 batches): accuracy = 0.966822, f1-score = 0.968514, loss = 21.431238
+2023-08-19-02-42-40: Finished batch 1800.
+
+2023-08-19-02-42-40: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt1800.pth...
+2023-08-19-02-42-40: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt1800.pth.
+
+2023-08-19-02-43-05: Training (last 600 batches): accuracy = 0.995833, f1-score = 0.995970, loss = 8.978537
+2023-08-19-02-43-07: Validation (total 179 batches): accuracy = 0.969159, f1-score = 0.970976, loss = 24.988699
+2023-08-19-02-43-07: Finished batch 2400.
+
+2023-08-19-02-43-07: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt2400.pth...
+2023-08-19-02-43-07: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt2400.pth.
+
+2023-08-19-02-43-31: Training (last 600 batches): accuracy = 0.994028, f1-score = 0.994331, loss = 10.930553
+2023-08-19-02-43-33: Validation (total 179 batches): accuracy = 0.967290, f1-score = 0.969136, loss = 24.690283
+2023-08-19-02-43-33: Finished batch 3000.
+
+2023-08-19-02-43-33: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt3000.pth...
+2023-08-19-02-43-33: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt3000.pth.
+
+2023-08-19-02-43-57: Training (last 600 batches): accuracy = 0.998056, f1-score = 0.998136, loss = 5.647467
+2023-08-19-02-43-59: Validation (total 179 batches): accuracy = 0.969626, f1-score = 0.970943, loss = 23.976269
+2023-08-19-02-43-59: Finished batch 3600.
+
+2023-08-19-02-43-59: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt3600.pth...
+2023-08-19-02-44-00: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt3600.pth.
+
+2023-08-19-02-44-23: Training (last 600 batches): accuracy = 0.997917, f1-score = 0.997999, loss = 4.476615
+2023-08-19-02-44-25: Validation (total 179 batches): accuracy = 0.960280, f1-score = 0.963060, loss = 32.116802
+2023-08-19-02-44-25: Finished batch 4200.
+
+2023-08-19-02-44-25: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt4200.pth...
+2023-08-19-02-44-26: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt4200.pth.
+
+2023-08-19-02-44-49: Training (last 600 batches): accuracy = 0.996806, f1-score = 0.996968, loss = 6.461128
+2023-08-19-02-44-52: Validation (total 179 batches): accuracy = 0.959813, f1-score = 0.962609, loss = 29.453463
+2023-08-19-02-44-52: Finished batch 4800.
+
+2023-08-19-02-44-52: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt4800.pth...
+2023-08-19-02-44-52: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt4800.pth.
+
+2023-08-19-02-45-14: Training (last 600 batches): accuracy = 0.998889, f1-score = 0.998944, loss = 2.108716
+2023-08-19-02-45-16: Validation (total 179 batches): accuracy = 0.972430, f1-score = 0.973696, loss = 27.209953
+2023-08-19-02-45-16: Finished batch 5350.
+
+2023-08-19-02-45-16: Saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt5350.pth...
+2023-08-19-02-45-16: Finished saving model at ./results/aaai-constraint-covid-appended/DistilBERT-NT/2023-08-19-02-41-14/ckpt5350.pth.
+

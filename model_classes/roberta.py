@@ -1,7 +1,7 @@
 from typing import Union
 
-from torch import cat, device, Tensor
-from torch.nn import Linear, CrossEntropyLoss
+from torch import device, Tensor
+from torch.nn import Linear
 
 from .base import BaseModel
 
@@ -12,12 +12,11 @@ class RoBERTa(BaseModel):
         self,
         base_model,
         emb_table_size: Union[int, None],
-        two_labels: bool = False,
         dense_size: Union[int, None] = None,
         device: device = device(type='cpu')
     ):
 
-        super().__init__(base_model, emb_table_size, two_labels, dense_size, device)
+        super().__init__(base_model, emb_table_size, dense_size, device)
 
     def transformer(
         self,
@@ -25,7 +24,9 @@ class RoBERTa(BaseModel):
         attention_mask: Tensor = None
     ):
 
-        return self.base_model.roberta(input_ids=input_ids, attention_mask=attention_mask)
+        outputs = self.base_model.roberta(input_ids=input_ids, attention_mask=attention_mask)
+
+        return outputs
 
     def classifier(
         self,
