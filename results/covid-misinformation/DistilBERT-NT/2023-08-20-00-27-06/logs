@@ -1,0 +1,29 @@
+DATASET = covid-misinformation
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = True
+MAX LENGTH = 128
+BATCH SIZE = 64
+MODEL = distilbert-base-uncased
+LEARNING RATE = 1e-05
+TEST EVERY = 10000
+SAVE EVERY = None
+
+2023-08-20-00-27-06: Loading and pre-processing datasets...
+2023-08-20-00-29-06: Finished pre-processing datasets.
+
+2023-08-20-00-29-06: Tokenizing datasets...
+2023-08-20-00-31-49: Finished tokenizing datasets.
+
+2023-08-20-00-31-49: Preparing data-loaders...
+2023-08-20-00-31-49: Finished preparing data-loaders.
+
+2023-08-20-00-31-49: Loading and preparing model...
+2023-08-20-00-31-51: Finshed preparing model.
+
+2023-08-20-00-31-51: Starting training...
+
+2023-08-20-00-58-14: Training (last 10000 batches): accuracy = 0.895817, f1-score = 0.916592, loss = 2407.500465
+2023-08-20-01-01-09: Validation (total 3214 batches): accuracy = 0.921826, f1-score = 0.937644, loss = 590.224304
+2023-08-20-01-01-09: Finished batch 10000.
+

@@ -1,9 +1,9 @@
-DEVICE_INDEX=0
+DEVICE_INDEX=1
 
-for run in {1..5}; do
-    for dataset in {aaai-constraint-covid,aaai-constraint-covid-appended,}; do
+for run in {1..1}; do
+    for dataset in {covid-misinformation,}; do
         for model in {albert-base-v2,distilbert-base-uncased,}; do
-            for ADD_NEW_TOKENS in {False,True}; do
+            for ADD_NEW_TOKENS in {True,}; do
                 python3 -B main.py \
                     --dataset ${dataset} \
                     --model ${model} \

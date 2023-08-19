@@ -1,0 +1,45 @@
+DATASET = covid-misinformation
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = False
+MAX LENGTH = 128
+BATCH SIZE = 64
+MODEL = distilbert-base-uncased
+LEARNING RATE = 1e-05
+TEST EVERY = 10000
+SAVE EVERY = None
+
+2023-08-19-21-44-13: Loading and pre-processing datasets...
+2023-08-19-21-46-17: Finished pre-processing datasets.
+
+2023-08-19-21-46-17: Tokenizing datasets...
+2023-08-19-21-49-13: Finished tokenizing datasets.
+
+2023-08-19-21-49-13: Preparing data-loaders...
+2023-08-19-21-49-13: Finished preparing data-loaders.
+
+2023-08-19-21-49-13: Loading and preparing model...
+2023-08-19-21-49-14: Finshed preparing model.
+
+2023-08-19-21-49-14: Starting training...
+
+2023-08-19-22-13-10: Training (last 10000 batches): accuracy = 0.896336, f1-score = 0.917208, loss = 2417.372282
+2023-08-19-22-15-49: Validation (total 3214 batches): accuracy = 0.919901, f1-score = 0.934843, loss = 597.556580
+2023-08-19-22-15-49: Finished batch 10000.
+
+2023-08-19-22-39-48: Training (last 10000 batches): accuracy = 0.924254, f1-score = 0.938851, loss = 1758.900185
+2023-08-19-22-42-27: Validation (total 3214 batches): accuracy = 0.928146, f1-score = 0.941896, loss = 538.128174
+2023-08-19-22-42-27: Finished batch 20000.
+
+2023-08-19-23-06-25: Training (last 10000 batches): accuracy = 0.932845, f1-score = 0.945586, loss = 1554.846925
+2023-08-19-23-09-04: Validation (total 3214 batches): accuracy = 0.932123, f1-score = 0.945360, loss = 505.272491
+2023-08-19-23-09-04: Finished batch 30000.
+
+2023-08-19-23-32-56: Training (last 10000 batches): accuracy = 0.941449, f1-score = 0.952472, loss = 1346.794146
+2023-08-19-23-35-34: Validation (total 3214 batches): accuracy = 0.933913, f1-score = 0.946381, loss = 501.240143
+2023-08-19-23-35-34: Finished batch 40000.
+
+2023-08-19-23-55-08: Training (last 10000 batches): accuracy = 0.942781, f1-score = 0.953466, loss = 1309.032572
+2023-08-19-23-57-46: Validation (total 3214 batches): accuracy = 0.934729, f1-score = 0.946988, loss = 497.527740
+2023-08-19-23-57-46: Finished batch 48207.
+
