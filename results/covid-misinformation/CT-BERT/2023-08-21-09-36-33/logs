@@ -1,0 +1,30 @@
+DATASET = covid-misinformation
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = False
+MAX LENGTH = 128
+BATCH SIZE = 64
+MODEL = covid-twitter-bert-v2
+LEARNING RATE = 1e-05
+TEST EVERY = 10000
+SAVE EVERY = None
+
+2023-08-21-09-36-33: Loading and pre-processing datasets...
+2023-08-21-09-38-36: Finished pre-processing datasets.
+
+2023-08-21-09-38-36: Tokenizing datasets...
+2023-08-21-09-41-35: Finished tokenizing datasets.
+
+2023-08-21-09-41-35: Preparing data-loaders...
+2023-08-21-09-41-35: Finished preparing data-loaders.
+
+2023-08-21-09-41-35: Loading and preparing model...
+2023-08-21-09-41-38: Finshed preparing model.
+
+2023-08-21-09-41-38: Starting training...
+
+2023-08-21-12-10-18: Training (last 10000 batches): accuracy = 0.911583, f1-score = 0.928698, loss = 2080.442733
+2023-08-21-12-27-29: Validation (total 3214 batches): accuracy = 0.929338, f1-score = 0.943140, loss = 528.945312
+2023-08-21-12-27-29: Finished batch 10000.
+
+2023-08-21-14-55-53: Training (last 10000 batches): accuracy = 0.821851, f1-score = 0.865432, loss = 3249.789324
