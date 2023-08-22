@@ -129,13 +129,16 @@ for epoch in range(cfg.DATA.N_EPOCHS):
     for input_ids, attention_mask, dense_features, labels in tqdm(train_loader):
 
         batch += 1
+        input_ids, attention_mask, labels = map(lambda x: x.to(DEVICE, non_blocking=True), (input_ids, attention_mask, labels,))
+        if dense_features is not None:
+            dense_features = dense_features.to(DEVICE, non_blocking=True)
         preds, labels, loss = train_batch(model, optimizer, input_ids, attention_mask, dense_features, labels)
         results.update('training', batch, labels, preds, loss)
 
         if batch % cfg.DATA.TEST_EVERY == 0 or batch == TOTAL_BATCHES:
             accuracy, f1_score, loss = results.metrics('training', last=cfg.DATA.TEST_EVERY)
             logger.log(f'Training (last {cfg.DATA.TEST_EVERY} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
-            preds, labels, loss = test_epoch(model, test_loader)
+            preds, labels, loss = test_epoch(model, test_loader, DEVICE)
             results.update('validation', batch, preds, labels, loss)
             accuracy, f1_score, loss = results.metrics('validation', last=1)
             logger.log(f'Validation (total {len(test_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)

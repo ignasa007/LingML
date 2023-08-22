@@ -35,3 +35,11 @@ SAVE EVERY = None
 2023-08-21-14-10-21: Validation (total 3214 batches): accuracy = 0.932420, f1-score = 0.945700, loss = 511.752136
 2023-08-21-14-10-21: Finished batch 30000.
 
+2023-08-21-17-22-02: Training (last 10000 batches): accuracy = 0.939574, f1-score = 0.951010, loss = 1391.078383
+2023-08-21-17-49-10: Validation (total 3214 batches): accuracy = 0.934836, f1-score = 0.947128, loss = 507.233215
+2023-08-21-17-49-10: Finished batch 40000.
+
+2023-08-21-20-33-32: Training (last 10000 batches): accuracy = 0.941538, f1-score = 0.952470, loss = 1348.037459
+2023-08-21-21-00-39: Validation (total 3214 batches): accuracy = 0.935794, f1-score = 0.947835, loss = 495.930756
+2023-08-21-21-00-39: Finished batch 48207.
+
