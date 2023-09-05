@@ -1,0 +1,61 @@
+DATASET = aaai-constraint-covid
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = True
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = bertweet-covid19-base-uncased
+LEARNING RATE = 1e-05
+TEST EVERY = 600
+SAVE EVERY = None
+
+2023-09-04-20-32-43: Loading and pre-processing datasets...
+2023-09-04-20-32-45: Finished pre-processing datasets.
+
+2023-09-04-20-32-45: Tokenizing datasets...
+2023-09-04-20-32-48: Finished tokenizing datasets.
+
+2023-09-04-20-32-48: Preparing data-loaders...
+2023-09-04-20-32-48: Finished preparing data-loaders.
+
+2023-09-04-20-32-48: Loading and preparing model...
+2023-09-04-20-32-50: Finshed preparing model.
+
+2023-09-04-20-32-50: Starting training...
+
+2023-09-04-20-33-33: Training (last 600 batches): accuracy = 0.905278, f1-score = 0.911749, loss = 146.419045
+2023-09-04-20-33-37: Validation (total 179 batches): accuracy = 0.954673, f1-score = 0.957174, loss = 22.867500
+2023-09-04-20-33-37: Finished batch 600.
+
+2023-09-04-20-34-20: Training (last 600 batches): accuracy = 0.969306, f1-score = 0.970514, loss = 53.209805
+2023-09-04-20-34-23: Validation (total 179 batches): accuracy = 0.960280, f1-score = 0.962637, loss = 20.870274
+2023-09-04-20-34-23: Finished batch 1200.
+
+2023-09-04-20-35-06: Training (last 600 batches): accuracy = 0.985000, f1-score = 0.985871, loss = 28.156095
+2023-09-04-20-35-10: Validation (total 179 batches): accuracy = 0.966822, f1-score = 0.968928, loss = 20.758358
+2023-09-04-20-35-10: Finished batch 1800.
+
+2023-09-04-20-35-52: Training (last 600 batches): accuracy = 0.991111, f1-score = 0.991448, loss = 18.275756
+2023-09-04-20-35-56: Validation (total 179 batches): accuracy = 0.969626, f1-score = 0.971098, loss = 22.454407
+2023-09-04-20-35-56: Finished batch 2400.
+
+2023-09-04-20-36-38: Training (last 600 batches): accuracy = 0.994167, f1-score = 0.994362, loss = 10.819223
+2023-09-04-20-36-42: Validation (total 179 batches): accuracy = 0.971495, f1-score = 0.973116, loss = 23.430946
+2023-09-04-20-36-42: Finished batch 3000.
+
+2023-09-04-20-37-25: Training (last 600 batches): accuracy = 0.995417, f1-score = 0.995682, loss = 9.536831
+2023-09-04-20-37-28: Validation (total 179 batches): accuracy = 0.975234, f1-score = 0.976413, loss = 21.243998
+2023-09-04-20-37-28: Finished batch 3600.
+
+2023-09-04-20-38-11: Training (last 600 batches): accuracy = 0.997500, f1-score = 0.997617, loss = 6.036528
+2023-09-04-20-38-15: Validation (total 179 batches): accuracy = 0.968224, f1-score = 0.970070, loss = 27.682810
+2023-09-04-20-38-15: Finished batch 4200.
+
+2023-09-04-20-38-57: Training (last 600 batches): accuracy = 0.995833, f1-score = 0.996016, loss = 7.599586
+2023-09-04-20-39-01: Validation (total 179 batches): accuracy = 0.959346, f1-score = 0.962289, loss = 30.655899
+2023-09-04-20-39-01: Finished batch 4800.
+
+2023-09-04-20-39-40: Training (last 600 batches): accuracy = 0.998056, f1-score = 0.998140, loss = 3.842163
+2023-09-04-20-39-44: Validation (total 179 batches): accuracy = 0.970561, f1-score = 0.972356, loss = 27.500212
+2023-09-04-20-39-44: Finished batch 5350.
+

@@ -7,21 +7,8 @@ class Logger:
 
     def __init__(self, dataset, model, add_new_tokens):
 
-        self.SAVE_DIR = f'./results/{dataset}/'
+        self.SAVE_DIR = f'./results/{dataset}/{model}'
 
-        model = model.lower()
-
-        if 'roberta' in model:
-            self.SAVE_DIR += 'Twitter-RoBERTa'
-        elif 'albert' in model:
-            self.SAVE_DIR += 'ALBERT'
-        elif 'distilbert' in model:
-            self.SAVE_DIR += 'DistilBERT'
-        elif 'bert' in model:
-            self.SAVE_DIR += 'CT-BERT'
-        else:
-            raise ValueError(f'Cannot identify model {model}. Use one of RoBERTa, ALBERT, DistilBERT and BERT models.')
-        
         if add_new_tokens:
             self.SAVE_DIR += '-NT'
 

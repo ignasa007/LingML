@@ -49,7 +49,7 @@ DEVICE = torch.device(f'cuda:{cfg.DEVICE_INDEX}' if torch.cuda.is_available() an
 
 logger = Logger(
     dataset=args.dataset,
-    model=args.model,
+    model=cfg.MODEL.SAVE_NAME,
     add_new_tokens=cfg.ADD_NEW_TOKENS
 )
 preprocessor = PreProcessor()

@@ -26,6 +26,7 @@ def default_cfg():
     _C.MODEL = CN()
     _C.MODEL.HF_PATH = None
     _C.MODEL.MAX_LENGTH = None
+    _C.MODEL.SAVE_NAME = None
 
     return _C.clone()
 

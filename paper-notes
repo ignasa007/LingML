@@ -12,5 +12,4 @@ novelty - modeling with linguistic features
 explain data and preprocessing
 10 runs, also include training time
 figure to show model architecture
-test - freeze the transformer layers, then train the dense layers
 with linguistic features, only test the model with best highest performing model on the original dataset
