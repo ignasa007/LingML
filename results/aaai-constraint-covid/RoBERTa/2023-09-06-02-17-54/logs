@@ -47,3 +47,15 @@ SAVE EVERY = None
 2023-09-06-02-22-31: Validation (total 179 batches): accuracy = 0.970561, f1-score = 0.972210, loss = 26.328890
 2023-09-06-02-22-31: Finished batch 3600.
 
+2023-09-06-02-23-12: Training (last 600 batches): accuracy = 0.995556, f1-score = 0.995714, loss = 6.060845
+2023-09-06-02-23-16: Validation (total 179 batches): accuracy = 0.970561, f1-score = 0.972136, loss = 20.687645
+2023-09-06-02-23-16: Finished batch 4200.
+
+2023-09-06-02-23-58: Training (last 600 batches): accuracy = 0.995833, f1-score = 0.996012, loss = 8.584933
+2023-09-06-02-24-01: Validation (total 179 batches): accuracy = 0.966355, f1-score = 0.968393, loss = 29.939476
+2023-09-06-02-24-01: Finished batch 4800.
+
+2023-09-06-02-24-40: Training (last 600 batches): accuracy = 0.994722, f1-score = 0.995009, loss = 8.540797
+2023-09-06-02-24-43: Validation (total 179 batches): accuracy = 0.963084, f1-score = 0.965029, loss = 25.857677
+2023-09-06-02-24-43: Finished batch 5350.
+

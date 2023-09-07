@@ -1,0 +1,25 @@
+DATASET = aaai-constraint-covid-appended
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = False
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = xlm-roberta-base
+LEARNING RATE = 1e-05
+TEST EVERY = 600
+SAVE EVERY = None
+
+2023-09-07-12-37-25: Loading and pre-processing datasets...
+2023-09-07-12-37-27: Finished pre-processing datasets.
+
+2023-09-07-12-37-27: Tokenizing datasets...
+2023-09-07-12-37-32: Finished tokenizing datasets.
+
+2023-09-07-12-37-32: Preparing data-loaders...
+2023-09-07-12-37-32: Finished preparing data-loaders.
+
+2023-09-07-12-37-32: Loading and preparing model...
+2023-09-07-12-39-33: Finshed preparing model.
+
+2023-09-07-12-39-33: Starting training...
+
