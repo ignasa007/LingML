@@ -1,0 +1,30 @@
+DATASET = aaai-constraint-covid
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = False
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = bertweet-covid19-base-uncased
+LEARNING RATE = 1e-05
+TEST EVERY = 600
+SAVE EVERY = None
+
+2023-10-27-11-59-30: Loading and pre-processing datasets...
+2023-10-27-11-59-32: Finished pre-processing datasets.
+
+2023-10-27-11-59-32: Tokenizing datasets...
+2023-10-27-11-59-35: Finished tokenizing datasets.
+
+2023-10-27-11-59-35: Preparing data-loaders...
+2023-10-27-11-59-35: Finished preparing data-loaders.
+
+2023-10-27-11-59-35: Loading and preparing model...
+2023-10-27-11-59-37: Finshed preparing model.
+
+2023-10-27-11-59-37: Starting training...
+
+2023-10-27-12-00-24: Training (last 600 batches): accuracy = 0.910417, f1-score = 0.916332, loss = 139.057361
+2023-10-27-12-00-28: Validation (total 179 batches): accuracy = 0.946729, f1-score = 0.951031, loss = 28.494438
+2023-10-27-12-00-33: Testing (total 179 batches): accuracy = 0.948131, f1-score = 0.952340, loss = 26.866169
+2023-10-27-12-00-33: Finished batch 600.
+

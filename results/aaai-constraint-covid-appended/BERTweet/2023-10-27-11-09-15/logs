@@ -43,3 +43,28 @@ SAVE EVERY = None
 2023-10-27-11-12-55: Testing (total 179 batches): accuracy = 0.968692, f1-score = 0.970419, loss = 18.105928
 2023-10-27-11-12-55: Finished batch 2400.
 
+2023-10-27-11-13-41: Training (last 600 batches): accuracy = 0.991528, f1-score = 0.991874, loss = 16.486595
+2023-10-27-11-13-45: Validation (total 179 batches): accuracy = 0.963551, f1-score = 0.966087, loss = 26.765438
+2023-10-27-11-13-49: Testing (total 179 batches): accuracy = 0.964953, f1-score = 0.967292, loss = 26.500441
+2023-10-27-11-13-49: Finished batch 3000.
+
+2023-10-27-11-14-36: Training (last 600 batches): accuracy = 0.995139, f1-score = 0.995395, loss = 10.491640
+2023-10-27-11-14-40: Validation (total 179 batches): accuracy = 0.962617, f1-score = 0.964758, loss = 25.157780
+2023-10-27-11-14-44: Testing (total 179 batches): accuracy = 0.968692, f1-score = 0.970419, loss = 21.192316
+2023-10-27-11-14-44: Finished batch 3600.
+
+2023-10-27-11-15-30: Training (last 600 batches): accuracy = 0.998194, f1-score = 0.998273, loss = 6.654039
+2023-10-27-11-15-34: Validation (total 179 batches): accuracy = 0.965421, f1-score = 0.966994, loss = 28.534372
+2023-10-27-11-15-38: Testing (total 179 batches): accuracy = 0.972430, f1-score = 0.973578, loss = 23.374260
+2023-10-27-11-15-38: Finished batch 4200.
+
+2023-10-27-11-16-25: Training (last 600 batches): accuracy = 0.995972, f1-score = 0.996150, loss = 8.553713
+2023-10-27-11-16-29: Validation (total 179 batches): accuracy = 0.966822, f1-score = 0.968458, loss = 27.073519
+2023-10-27-11-16-33: Testing (total 179 batches): accuracy = 0.971495, f1-score = 0.972877, loss = 23.565996
+2023-10-27-11-16-33: Finished batch 4800.
+
+2023-10-27-11-17-15: Training (last 600 batches): accuracy = 0.997361, f1-score = 0.997470, loss = 6.457352
+2023-10-27-11-17-20: Validation (total 179 batches): accuracy = 0.964953, f1-score = 0.967148, loss = 30.731159
+2023-10-27-11-17-24: Testing (total 179 batches): accuracy = 0.969159, f1-score = 0.971002, loss = 27.138939
+2023-10-27-11-17-24: Finished batch 5350.
+
