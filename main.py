@@ -96,7 +96,7 @@ logger.log('Finished tokenizing datasets.\n')
 
 
 logger.log('Preparing data-loaders...')
-train_loader, test_loader = data_loaders(
+train_loader, val_loader, test_loader = data_loaders(
     cfg.SPLITS,
     encoded_inputs,
     dense_features,
@@ -138,10 +138,14 @@ for epoch in range(cfg.DATA.N_EPOCHS):
         if batch % cfg.DATA.TEST_EVERY == 0 or batch == TOTAL_BATCHES:
             accuracy, f1_score, loss = results.metrics('training', last=cfg.DATA.TEST_EVERY)
             logger.log(f'Training (last {cfg.DATA.TEST_EVERY} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
-            preds, labels, loss = test_epoch(model, test_loader, DEVICE)
+            preds, labels, loss = test_epoch(model, val_loader, DEVICE)
             results.update('validation', batch, preds, labels, loss)
             accuracy, f1_score, loss = results.metrics('validation', last=1)
-            logger.log(f'Validation (total {len(test_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
+            logger.log(f'Validation (total {len(val_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
+            preds, labels, loss = test_epoch(model, test_loader, DEVICE)
+            results.update('testing', batch, preds, labels, loss)
+            accuracy, f1_score, loss = results.metrics('testing', last=1)
+            logger.log(f'Testing (total {len(test_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
             logger.log(f'Finished batch {batch}.\n', print_text=True)
 
         if cfg.DATA.SAVE_EVERY is not None and (batch % cfg.DATA.SAVE_EVERY == 0 or batch == TOTAL_BATCHES):
@@ -151,5 +155,5 @@ for epoch in range(cfg.DATA.N_EPOCHS):
             logger.log(f'Finished saving model at {ckpt_fn}.\n', print_text=True)
 
 
-for type in ('training', 'validation'):
+for type in ('training', 'validation', 'testing'):
     logger.save(f'{type}_results', results.results[type])
