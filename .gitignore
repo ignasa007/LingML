@@ -2,3 +2,6 @@
 **/*.pth
 datasets/covid-misinformation/dataset.csv
 results_all/
+main.sh
+transformers-results.csv
+lingM-results.csv
