@@ -1,5 +1,4 @@
 **/__pycache__/
 **/*.pth
 datasets/covid-misinformation/dataset.csv
-results_all/
 ignore/
