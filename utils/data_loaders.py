@@ -22,7 +22,7 @@ class CustomDataset(Dataset):
             self.binarized_labels[idx]
 
 
-def data_loaders(splits, encoded_input, dense_features, binarized_labels, batch_size, device):
+def data_loaders(splits, encoded_input, dense_features, binarized_labels, batch_size, shuffle=True):
 
     def collate_fn(batch):
 
@@ -30,10 +30,8 @@ def data_loaders(splits, encoded_input, dense_features, binarized_labels, batch_
         if any((x is None for x in dense_features)):
             dense_features = None
 
-        # input_ids, attention_mask, labels = map(lambda x: stack(x, 0).to(device), (input_ids, attention_mask, labels,))
         input_ids, attention_mask, labels = map(lambda x: stack(x, 0), (input_ids, attention_mask, labels,))
         if dense_features is not None:
-            # dense_features = stack(dense_features, 0).to(device)
             dense_features = stack(dense_features, 0)
 
         return input_ids, attention_mask, dense_features, labels
@@ -51,7 +49,7 @@ def data_loaders(splits, encoded_input, dense_features, binarized_labels, batch_
             data_loader = DataLoader(
                 dataset,
                 batch_size=batch_size,
-                shuffle=True,
+                shuffle=shuffle,
                 collate_fn=collate_fn,
                 pin_memory=True,
             )

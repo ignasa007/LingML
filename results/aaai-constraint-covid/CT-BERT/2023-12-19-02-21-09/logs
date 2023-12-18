@@ -1,0 +1,22 @@
+DATASET = aaai-constraint-covid
+COVID WORDS = covid 19, covid-19, covid19, covid, corona virus, coronavirus, corona
+TOKENS = [URL], [HASHTAG], [MENTION], [EMOJI], [COVID]
+ADD NEW TOKENS = False
+MAX LENGTH = 128
+BATCH SIZE = 12
+MODEL = covid-twitter-bert-v2
+2023-12-19-02-21-09: Loading and pre-processing dataset...
+2023-12-19-02-21-10: Finished pre-processing dataset.
+
+2023-12-19-02-21-10: Tokenizing dataset...
+2023-12-19-02-21-11: Finished tokenizing dataset.
+
+2023-12-19-02-21-11: Preparing data-loader...
+2023-12-19-02-21-11: Finished preparing data-loader.
+
+2023-12-19-02-21-11: Loading and preparing model...
+2023-12-19-02-21-15: Finshed preparing model.
+
+2023-12-19-02-21-15: Starting inference...
+2023-12-19-02-21-26: Finished inference.
+2023-12-19-02-21-26: Testing (total 2140 samples): accuracy = 0.981308, f1-score = 0.982159, loss = 17.367569

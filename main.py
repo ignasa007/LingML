@@ -101,8 +101,7 @@ train_loader, val_loader, test_loader = data_loaders(
     encoded_inputs,
     dense_features,
     binarized_labels,
-    batch_size=cfg.DATA.BATCH_SIZE,
-    device=DEVICE
+    batch_size=cfg.DATA.BATCH_SIZE
 )
 logger.log('Finished preparing data-loaders.\n')
 
@@ -132,18 +131,18 @@ for epoch in range(cfg.DATA.N_EPOCHS):
         input_ids, attention_mask, labels = map(lambda x: x.to(DEVICE, non_blocking=True), (input_ids, attention_mask, labels,))
         if dense_features is not None:
             dense_features = dense_features.to(DEVICE, non_blocking=True)
-        preds, labels, loss = train_batch(model, optimizer, input_ids, attention_mask, dense_features, labels)
+        labels, preds, loss = train_batch(model, optimizer, input_ids, attention_mask, dense_features, labels)
         results.update('training', batch, labels, preds, loss)
 
         if batch % cfg.DATA.TEST_EVERY == 0 or batch == TOTAL_BATCHES:
             accuracy, f1_score, loss = results.metrics('training', last=cfg.DATA.TEST_EVERY)
             logger.log(f'Training (last {cfg.DATA.TEST_EVERY} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
-            preds, labels, loss = test_epoch(model, val_loader, DEVICE)
-            results.update('validation', batch, preds, labels, loss)
+            labels, preds, loss = test_epoch(model, val_loader, DEVICE)
+            results.update('validation', batch, labels, preds, loss)
             accuracy, f1_score, loss = results.metrics('validation', last=1)
             logger.log(f'Validation (total {len(val_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
-            preds, labels, loss = test_epoch(model, test_loader, DEVICE)
-            results.update('testing', batch, preds, labels, loss)
+            labels, preds, loss = test_epoch(model, test_loader, DEVICE)
+            results.update('testing', batch, labels, preds, loss)
             accuracy, f1_score, loss = results.metrics('testing', last=1)
             logger.log(f'Testing (total {len(test_loader)} batches): accuracy = {accuracy:.6f}, f1-score = {f1_score:.6f}, loss = {loss:.6f}', print_text=True)
             logger.log(f'Finished batch {batch}.\n', print_text=True)

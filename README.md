@@ -29,9 +29,8 @@ This is the code repository for the technical part of Project FIDES. As of 18 De
 ## Setup
 
 ```bash
-conda create -n fakenews python=3.8
-conda activate fakenews
-pip install -r requirements.txt
+conda create --name <env-name> --file requirements.txt python=3.8
+conda activate <env-name>
 ```
 
 ## Execution
@@ -72,6 +71,22 @@ python3 -B main.py \
     DATASET.BATCH_SIZE 16 \
     DATASET.args.root <dataset-root> \
     MODEL.MAX_LENGTH 200
+```
+
+For inference, execute
+```bash
+python3 -B inference.py \
+    --dataset <dataset> \
+    --model <model> \
+    --weights <path-to-weights>
+```
+
+For example,
+```bash
+python3 -B inference.py \
+    --dataset aaai-contraint-covid \
+    --model covid-twitter-bert-v2 \
+    --weights "./results/aaai-constraint-covid/CT-BERT/2023-12-19-00-28-08/ckpt5350.pth"
 ```
 
 Note: Make sure to set the device index to <i>None</i> if you do not wish to use the GPU. For example,
