@@ -1,3 +1,16 @@
+# usage:
+
+# python3 -B inference.py \
+#    --model covid-twitter-bert-v2 \
+#    --dataset aaai-constraint-covid \
+#    --weights "./results/aaai-constraint-covid/CT-BERT/2023-12-19-00-28-08/ckpt5350.pth"
+
+# python3 -B inference.py \
+#    --model covid-twitter-bert-v2 \
+#    --dataset aaai-constraint-covid-appended \
+#    --weights "./results/aaai-constraint-covid-appended/CT-BERT/2023-12-19-02-26-31/ckpt5350.pth"
+
+
 import argparse
 import os
 import warnings; warnings.filterwarnings('ignore')
