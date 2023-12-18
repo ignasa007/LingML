@@ -1,25 +1,30 @@
 # Project-FIDES
 
-This is the code repository for the technical part of Project FIDES. As of 17 August, 2023, the repository contains the code for Studies 3 and 4.
+This is the code repository for the technical part of Project FIDES. As of 18 December, 2023, the repository contains the code for studies making part of the paper **LingML: Linguistic-Informed Machine Learning for Enhanced Fake News Detection**.
 
 ## Directory Structure
 
-- <b>assets</b> - plots generated for different experiments. <br>
-\<dataset> -> \<model-1>_\<model-2> -> training/validation -> accuracy/f1-score/loss <br>
-Note: these plots were made before we decided to average out results over multiple runs.
-- <b>config</b> - default configuration files.
-- <b>daa_classes</b> - Python classes to handle different datasets, and make them suitable for training.
-- <b>datasets</b> - raw datasets in csv format.
-- <b>model_classes</b> - Python classes to handle different models.
-    - number of labels need to be changed from 3 to 2 for RoEBRTA.
-    - both models need special implementation for accommodating language features.
-- <b>results</b> - results of the different runs. <br>
-\<dataset> -> \<model> -> \<run-date> -> logs/training_results/validation_results <br>
-Note: CovidMis20 experiment has only 1 run which was conducted before the decision to conduct multiple runs for each experiment was made. 
-- <b>utils</b> - utility functions for running the transformer experiments.
-- <b>analysis.ipynb</b> - notebook to consoliate results.
-- <b>main.py</b> - main file for running the transformer experiments.
-- <b>xml.ipynb</b> - notebook running the experiments using simple machine learning algorithms with the language features.
+- **assets** - plots generated for different experiments. note that these plots are quite old, and we would advise against referring to them. These are simply there for completeness. 
+    - **directory structure** - *dataset* -> *model-1*_*model-2* -> *data-split* -> *metric*.
+    - **note**: these plots were made before we decided to average out results over multiple runs.
+- **config** - configuration files for different datasets and LLM models.
+- **data_classes** - Python classes to handle different datasets, and make them suitable for training.
+- **datasets** - raw datasets in csv format.
+    - **aaai-constraint-covid** - original dataset by [Patwa et al., 2020](https://arxiv.org/abs/2011.03327).
+    - **aaai-constraint-covid-appended** - original dataset with appended linguistic features retrieved using LIWC-22.
+    - **aaai-constraint-covid-cleaned** - dataset constructed by eliminating records identified by [Bee et al., 2023](https://arxiv.org/abs/2310.04237), as as being neither true or false in the context of COVID-19.
+    - **aaai-constraint-covid-cleaned-appended** - cleaned dataset with appended linguistic features.
+- **model_classes** - Python classes to handle 11 transformer-based LLMs.
+    - all models need special implementation for incorporating language features.
+    - number of output heads needs to be changed from 3 to 2 for Twitter-RoEBRTa.
+- **results** - results of the different runs. <br>
+    - **directory structure** - \<dataset> -> \<model> -> \<run-date> -> training logs and <data-split_results> <br>
+    - **note**: CovidMis20 experiment has only 1 run which was conducted before the decision to conduct multiple runs for each experiment was made. 
+- **utils** - utility functions for running the transformer experiments.
+- **analysis.ipynb** - notebook to consoliate results.
+- **main.py** - main file for running the transformer experiments.
+- **plotting.ipynb** - notebook to generate plots for results of experiments in **xml.ipynb**.
+- **xml.ipynb** - notebook running the experiments using simple machine learning algorithms with the language features.
 
 ## Setup
 
@@ -39,14 +44,24 @@ python3 -B main.py \
 ```
 
 where dataset can be one of
-- <b>aaai-contraint-covid</b> - the original AAAI-Constraint dataset
-- <b>aaai-contraint-covid-appended</b> - the original AAAI-Constraint dataset with language features
-- <b>aaai-contraint-covid-cleaned</b> - cleaned version of the AAAI-Constraint dataset
-- <b>aaai-contraint-covid-cleaned-appended</b> - cleaned version of the AAAI-Constraint dataset with language features
+- **aaai-contraint-covid**
+- **aaai-contraint-covid-appended**
+- **aaai-contraint-covid-cleaned**
+- **aaai-contraint-covid-cleaned-appended**
 
-and model can be one of
-- <b>covid-twitter-bert-v2</b> - latest version of COVID-Twitter-BERT model
-- <b>twiiter-roberta-base-sentiment-latest</b> - latest version of Twitter-RoBERTa model
+and model can be one of 
+- **albert-base-v2** - Base version of ALBERT model with a randomly initialized sequence classification head. See [HF model card](https://huggingface.co/albert-base-v2).
+- **bart-base** - Base version of BART model. See [HF model card](https://huggingface.co/facebook/bart-base).
+- **bert-base-uncased** - Base version of BERT model. See [HF model card](https://huggingface.co/bert-base-uncased).
+- **bertweet-covid-19-base-uncased** - Base version of BERTweet model, a RoBERTa model pre-trained on ~850M tweets, ~5M of which were COVID-19 related. See [HF model card](https://huggingface.co/vinai/bertweet-covid19-base-uncased).
+- **covid-twitter-bert-v2** - CT-BERT Model, which is a large BERT model pre-trained on ~97M COVID-related tweets. See [HF model card](https://huggingface.co/digitalepidemiologylab/covid-twitter-bert-v2).
+- **distilbert-base-uncased** - Base version of DistilBERT model, a distilled version of BERT, i.e. a smaller model trained with BERT as a teacher. See [HF model card](https://huggingface.co/distilbert-base-uncased).
+- **longformer-base-4096** - Base version of Longformer model, which is a BERT-like model started from the RoBERTa checkpoint and pretrained for MLM on long documents. See [HF model card](https://huggingface.co/allenai/longformer-base-4096).
+- **roberta-base** - Base version of RoBERTa model. See [HF model card](https://huggingface.co/roberta-base).
+- **twitter-roberta-base-sentiment-latest** - Base version of Twitter-RoBERTa model, which is a RoBERTa-base model trained on ~124M tweets, and finetuned for sentiment analysis with the TweetEval benchmark. See [HF model card](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest).
+- **xlm-mlm-en-2048** - XLM model trained with masked language modeling (MLM) objective. See [HF model card](https://huggingface.co/xlm-mlm-en-2048).
+- **xlm-roberta-base** - Base version of XLM-RoBERTa model, a multilingual version of RoBERTa. See [HF model card](https://huggingface.co/xlm-roberta-base).
+- **xlnet-base-uncased** - Base version of XLNet model. See [HF model card](https://huggingface.co/xlnet-base-cased).
 
 You can also override default configurations using the command line. For example,
 ```bash
