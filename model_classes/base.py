@@ -15,16 +15,19 @@ class BaseModel:
     ):
 
         self.base_model = base_model
+        self.n_params = []
         
         if base_model.num_labels > 2:
             self.set_two_labels()
 
         if isinstance(emb_table_size, int):
             self.base_model.resize_token_embeddings(emb_table_size)
+            self.n_params.append(sum(p.numel() for p in base_model.parameters()))
 
         self.add_dense = False
         if isinstance(dense_size, int):
             self.extend_dense_layer(dense_size)
+            self.n_params.append(sum(p.numel() for p in base_model.parameters()))
 
         self.base_model.to(device)
 

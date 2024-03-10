@@ -43,10 +43,10 @@ python3 -B main.py \
 ```
 
 where dataset can be one of
-- **aaai-contraint-covid**
-- **aaai-contraint-covid-appended**
-- **aaai-contraint-covid-cleaned**
-- **aaai-contraint-covid-cleaned-appended**
+- **aaai-constraint-covid**
+- **aaai-constraint-covid-appended**
+- **aaai-constraint-covid-cleaned**
+- **aaai-constraint-covid-cleaned-appended**
 
 and model can be one of 
 - **albert-base-v2** - Base version of ALBERT model with a randomly initialized sequence classification head. See [HF model card](https://huggingface.co/albert-base-v2).
@@ -84,7 +84,7 @@ python3 -B inference.py \
 For example,
 ```bash
 python3 -B inference.py \
-    --dataset aaai-contraint-covid \
+    --dataset aaai-constraint-covid \
     --model covid-twitter-bert-v2 \
     --weights "./results/aaai-constraint-covid/CT-BERT/2023-12-19-00-28-08/ckpt5350.pth"
 ```
