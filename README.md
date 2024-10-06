@@ -1,30 +1,26 @@
-# Project-FIDES
+# LingML
 
-This is the code repository for the technical part of Project FIDES. As of 18 December, 2023, the repository contains the code for studies making part of the paper **LingML: Linguistic-Informed Machine Learning for Enhanced Fake News Detection**.
+This is the official code repository for the paper **LingML: Linguistic-Informed Machine Learning for Enhanced Fake News Detection**.
 
 ## Directory Structure
 
-- **assets** - plots generated for different experiments. note that these plots are quite old, and we would advise against referring to them. These are simply there for completeness. 
-    - **directory structure** - *dataset* -> *model-1*_*model-2* -> *data-split* -> *metric*.
-    - **note**: these plots were made before we decided to average out results over multiple runs.
-- **config** - configuration files for different datasets and LLM models.
+- **config** - configuration files for different datasets and LLM models
 - **data_classes** - Python classes to handle different datasets, and make them suitable for training.
-- **datasets** - raw datasets in csv format.
-    - **aaai-constraint-covid** - original dataset by [Patwa et al., 2020](https://arxiv.org/abs/2011.03327).
-    - **aaai-constraint-covid-appended** - original dataset with appended linguistic features retrieved using LIWC-22.
-    - **aaai-constraint-covid-cleaned** - dataset constructed by eliminating records identified by [Bee et al., 2023](https://arxiv.org/abs/2310.04237), as as being neither true or false in the context of COVID-19.
-    - **aaai-constraint-covid-cleaned-appended** - cleaned dataset with appended linguistic features.
-- **model_classes** - Python classes to handle 11 transformer-based LLMs.
-    - all models need special implementation for incorporating language features.
-    - number of output heads needs to be changed from 3 to 2 for Twitter-RoEBRTa.
+- **datasets** - raw datasets in csv format
+    - **aaai-constraint-covid** - original dataset by [Patwa et al., 2020](https://arxiv.org/abs/2011.03327/)
+    - **aaai-constraint-covid-appended** - original dataset with appended linguistic features retrieved using [LIWC-22](https://www.liwc.app/)
+    - **aaai-constraint-covid-cleaned** - dataset constructed by eliminating records identified by [Bee et al., 2023](https://arxiv.org/abs/2310.04237), as being neither true nor false in the context of COVID-19
+    - **aaai-constraint-covid-cleaned-appended** - cleaned dataset with appended linguistic features
+- **model_classes** - Python classes to handle 11 transformer-based LLMs
+    - all models need special implementation for incorporating language features
+    - number of output heads needed to be changed from 3 to 2 for Twitter-RoEBRTa
 - **results** - results of the different runs. <br>
-    - **directory structure** - \<dataset> -> \<model> -> \<run-date> -> training logs and <data-split_results> <br>
-    - **note**: CovidMis20 experiment has only 1 run which was conducted before the decision to conduct multiple runs for each experiment was made. 
-- **utils** - utility functions for running the transformer experiments.
-- **analysis.ipynb** - notebook to consoliate results.
-- **main.py** - main file for running the transformer experiments.
-- **plotting.ipynb** - notebook to generate plots for results of experiments in **xml.ipynb**.
-- **xml.ipynb** - notebook running the experiments using simple machine learning algorithms with the language features.
+    - **directory structure** - \<dataset> -> \<model> -> \<run-date> -> training logs and <data-split_results>
+- **utils** - utility functions for running the transformer experiments
+- **analysis.ipynb** - notebook to consolidate results
+- **main.py** - main file for running the transformer experiments
+- **plotting.ipynb** - notebook to generate plots for results of experiments in **xml.ipynb**
+- **xml.ipynb** - notebook running the experiments using simple machine learning algorithms with the language features
 
 ## Setup
 
@@ -89,7 +85,7 @@ python3 -B inference.py \
     --weights "./results/aaai-constraint-covid/CT-BERT/2023-12-19-00-28-08/ckpt5350.pth"
 ```
 
-Note: Make sure to set the device index to <i>None</i> if you do not wish to use the GPU. For example,
+Note: Make sure to set the device index to <i>None</i> if you do not wish to use the GPU, i.e.
 ```bash
 python3 -B main.py \
     --dataset <dataset> \
