@@ -1,6 +1,6 @@
 # LingML
 
-This is the official code repository for the paper [LingML: Linguistic-Informed Machine Learning for Enhanced Fake News Detection](https://arxiv.org/abs/2405.04165).
+This is the official code repository for the paper **LingML: Linguistic-Informed Machine Learning for Enhanced Fake News Detection**.
 
 ## Directory Structure
 
