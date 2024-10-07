@@ -5,7 +5,7 @@ This is the official code repository for the paper **LingML: Linguistic-Informed
 ## Directory Structure
 
 - **config** - configuration files for different datasets and LLM models
-- **data_classes** - Python classes to handle different datasets, and make them suitable for training.
+- **data_classes** - Python classes to handle different datasets, and make them suitable for training
 - **datasets** - raw datasets in csv format
     - **aaai-constraint-covid** - original dataset by [Patwa et al., 2020](https://arxiv.org/abs/2011.03327/)
     - **aaai-constraint-covid-appended** - original dataset with appended linguistic features retrieved using [LIWC-22](https://www.liwc.app/)
@@ -14,7 +14,7 @@ This is the official code repository for the paper **LingML: Linguistic-Informed
 - **model_classes** - Python classes to handle 11 transformer-based LLMs
     - all models need special implementation for incorporating language features
     - number of output heads needed to be changed from 3 to 2 for Twitter-RoEBRTa
-- **results** - results of the different runs. <br>
+- **results** - results of the different runs <br>
     - **directory structure** - \<dataset> -> \<model> -> \<run-date> -> training logs and <data-split_results>
 - **utils** - utility functions for running the transformer experiments
 - **analysis.ipynb** - notebook to consolidate results
